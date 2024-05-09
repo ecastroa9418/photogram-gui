@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get("/", {:controller => "homepage", :action => "index"})
+  
   get("/users", {:controller => "users", :action => "index"})
   get("/users/:path_username", {:controller => "users", :action => "show"})
 
@@ -9,5 +11,6 @@ Rails.application.routes.draw do
   get("/delete_photo/:path_id", {:controller => "photos", :action => "destroy"})
   post("/insert_photo_record", {:controller => "photos", :action => "create"})
 
+  get("/update_photo/:path_id", {:controller => "photos", :action => "update"})
 
 end
